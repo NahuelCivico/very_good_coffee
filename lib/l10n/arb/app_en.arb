@@ -4,6 +4,7 @@
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     },
+    "veryGoodTitle": "Very Good Coffee",
     "homeLabel": "Home",
     "favoritesLabel": "Favorites",
     "nextCoffee": "Next Coffee"

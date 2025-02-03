@@ -18,7 +18,7 @@ class CoffeeRepositoryImpl extends AbstractCoffeeRepository {
       return CoffeeModel(
         imageUrl: imageUrl,
         rating: Functions.getRandomRate(),
-        isLiked: false,
+        isLiked: 0,
       );
     } catch (e) {
       throw FetchCoffeeImageFailure(e.toString());

@@ -9,7 +9,7 @@ part of 'coffee_model.dart';
 CoffeeModel _$CoffeeModelFromJson(Map<String, dynamic> json) => CoffeeModel(
       imageUrl: json['imageUrl'] as String,
       rating: json['rating'] as String,
-      isLiked: json['isLiked'] as bool,
+      isLiked: (json['isLiked'] as num).toInt(),
     );
 
 Map<String, dynamic> _$CoffeeModelToJson(CoffeeModel instance) =>

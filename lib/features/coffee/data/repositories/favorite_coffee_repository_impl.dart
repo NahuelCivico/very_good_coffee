@@ -8,8 +8,8 @@ class FavoriteCoffeeRepositoryImpl extends AbstractFavoriteCoffeeRepository {
   final FavoriteCoffeeImplApi _favoriteCoffeeImpl;
 
   @override
-  Future<List<CoffeeModel>> getFavorites() async {
-    return _favoriteCoffeeImpl.getFavorites();
+  Future<List<CoffeeModel>> getFavoriteCoffee() async {
+    return _favoriteCoffeeImpl.getFavoriteCoffee();
   }
 
   @override

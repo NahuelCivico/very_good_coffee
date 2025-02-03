@@ -10,7 +10,7 @@ class FavoriteCoffeeImplApi extends AbstractFavoritesCoffeeApi {
 
   /// This method is used to get the list of favorite coffees from the database.
   @override
-  Future<List<CoffeeModel>> getFavorites() async {
+  Future<List<CoffeeModel>> getFavoriteCoffee() async {
     return database.getFavorites();
   }
 

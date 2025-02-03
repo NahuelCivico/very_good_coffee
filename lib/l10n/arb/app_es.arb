@@ -4,6 +4,7 @@
     "@counterAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del contador"
     },
+    "veryGoodTitle": "Muy Buen Café",
     "homeLabel": "Inicio",
     "favoritesLabel": "Favoritos",
     "nextCoffee": "Próximo Café"

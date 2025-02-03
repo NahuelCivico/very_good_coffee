@@ -26,7 +26,8 @@ class VeryGoodCoffeeDatabase {
       CREATE TABLE favorites (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         imageUrl TEXT NOT NULL,
-        rating REAL NOT NULL
+        rating TEXT NOT NULL,
+        isLiked INTEGER NOT NULL
       )
     ''');
   }

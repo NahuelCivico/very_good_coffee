@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:very_good_coffee/core/utils/very_good_constants.dart';
+
 import 'package:very_good_coffee/features/coffee/data/data_sources/remoto/abstract_coffee_api.dart';
 
 /// Generic Exception throw during `fetchCoffeeImage` method.

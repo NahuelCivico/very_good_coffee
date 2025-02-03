@@ -15,14 +15,14 @@ class CoffeeModel {
 
   final String imageUrl;
   final String rating;
-  final bool isLiked;
+  final int isLiked;
 
   Map<String, dynamic> toJson() => _$CoffeeModelToJson(this);
 
   CoffeeModel copyWith({
     String? imageUrl,
     String? rating,
-    bool? isLiked,
+    int? isLiked,
   }) {
     return CoffeeModel(
       imageUrl: imageUrl ?? this.imageUrl,
