@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:very_good_coffee/counter/counter.dart';
+import 'package:very_good_coffee/core/app/screen/main_screen.dart';
+import 'package:very_good_coffee/core/theme/very_good_theme.dart';
 import 'package:very_good_coffee/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -8,15 +9,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        useMaterial3: true,
-      ),
+      theme: VeryGoodTheme().defaultTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const MainScreen(),
     );
   }
 }
