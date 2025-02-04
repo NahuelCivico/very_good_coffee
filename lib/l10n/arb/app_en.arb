@@ -7,5 +7,6 @@
     "veryGoodTitle": "Very Good Coffee",
     "homeLabel": "Home",
     "favoritesLabel": "Favorites",
-    "nextCoffee": "Next Coffee"
+    "nextCoffee": "Next Coffee",
+    "emptyLabel": "Your collection of favorite coffees is waiting!"
 }

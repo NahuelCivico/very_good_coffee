@@ -5,6 +5,7 @@ import 'package:very_good_coffee/core/utils/very_good_colors.dart';
 import 'package:very_good_coffee/features/coffee/presentation/cubit/coffee_cubit.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_buttons.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_card.dart';
+import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_error.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_rate.dart';
 import 'package:very_good_coffee/l10n/l10n.dart';
 
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
                           VeryGoodRate(rate: state.coffee.rating),
                         ],
                       ),
-                    CoffeeError() => const Text('Error'),
+                    CoffeeError() => const VeryGoodError(),
                   },
                 );
               },

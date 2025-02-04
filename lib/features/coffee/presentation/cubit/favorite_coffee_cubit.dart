@@ -31,21 +31,17 @@ class FavoriteCoffeeCubit extends Cubit<FavoriteCoffeeState> {
     try {
       if (state is FavoriteCoffeeLoaded) {
         final currentState = state as FavoriteCoffeeLoaded;
-        final isFavorite =
-            currentState.coffees.any((c) => c.imageUrl == coffee.imageUrl);
+        final updatedItems = List<CoffeeModel>.from(currentState.coffees);
 
-        if (isFavorite) {
+        if (updatedItems.any((c) => c.imageUrl == coffee.imageUrl)) {
           await favoriteCoffeeRepository.deleteFavorite(coffee.imageUrl);
-          final updatedItems = currentState.coffees
-              .where((c) => c.imageUrl != coffee.imageUrl)
-              .toList();
-          emit(FavoriteCoffeeLoaded(coffees: updatedItems));
+          updatedItems.removeWhere((c) => c.imageUrl == coffee.imageUrl);
         } else {
           await favoriteCoffeeRepository.saveFavorite(coffee);
-          final updatedItems = List<CoffeeModel>.from(currentState.coffees)
-            ..add(coffee);
-          emit(FavoriteCoffeeLoaded(coffees: updatedItems));
+          updatedItems.insert(0, coffee);
         }
+
+        emit(FavoriteCoffeeLoaded(coffees: updatedItems));
       }
     } catch (e) {
       emit(FavoriteCoffeeError(message: 'Error al actualizar favoritos: $e'));

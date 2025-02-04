@@ -20,22 +20,31 @@ class VeryGoodButtons extends StatelessWidget {
       spacing: 20,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
-          onPressed: () {
-            context.read<FavoriteCoffeeCubit>().toggleLike(coffee: coffee);
+        BlocBuilder<FavoriteCoffeeCubit, FavoriteCoffeeState>(
+          builder: (context, state) {
+            final isFavorite =
+                state is FavoriteCoffeeLoaded && state.coffees.contains(coffee);
+
+            return ElevatedButton(
+              onPressed: () {
+                context.read<FavoriteCoffeeCubit>().toggleLike(coffee: coffee);
+              },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                padding: const EdgeInsets.all(9),
+                backgroundColor: VeryGoodColors.white,
+              ),
+              child: Icon(
+                isFavorite
+                    ? Icons.favorite_rounded
+                    : Icons.favorite_border_rounded,
+                color: VeryGoodColors.blue,
+                size: 28,
+              ),
+            );
           },
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(40),
-            ),
-            padding: const EdgeInsets.all(9),
-            backgroundColor: VeryGoodColors.white,
-          ),
-          child: const Icon(
-            Icons.favorite_border_rounded,
-            color: VeryGoodColors.blue,
-            size: 28,
-          ),
         ),
         ElevatedButton(
           onPressed: () {

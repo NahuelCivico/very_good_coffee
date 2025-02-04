@@ -7,5 +7,6 @@
     "veryGoodTitle": "Muy Buen Café",
     "homeLabel": "Inicio",
     "favoritesLabel": "Favoritos",
-    "nextCoffee": "Próximo Café"
+    "nextCoffee": "Próximo Café",
+    "emptyLabel": "¡Tu colección de cafés favoritos está esperando!"
 }

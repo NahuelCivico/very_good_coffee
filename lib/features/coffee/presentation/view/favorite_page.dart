@@ -5,12 +5,14 @@ import 'package:very_good_coffee/core/utils/very_good_colors.dart';
 import 'package:very_good_coffee/features/coffee/presentation/cubit/favorite_coffee_cubit.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_card.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_delete_button.dart';
+import 'package:very_good_coffee/l10n/l10n.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     context.read<FavoriteCoffeeCubit>().getFavoriteCoffees();
     return Scaffold(
       backgroundColor: VeryGoodColors.white,
@@ -27,8 +29,9 @@ class FavoritePage extends StatelessWidget {
                 if (state.coffees.isEmpty) {
                   return Center(
                     child: Text(
-                      'No favorite coffees',
+                      l10n.emptyLabel,
                       style: Theme.of(context).primaryTextTheme.labelLarge,
+                      textAlign: TextAlign.center,
                     ),
                   );
                 }
