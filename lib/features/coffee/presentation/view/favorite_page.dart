@@ -13,7 +13,6 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    context.read<FavoriteCoffeeCubit>().getFavoriteCoffees();
     return Scaffold(
       backgroundColor: VeryGoodColors.white,
       body: Padding(

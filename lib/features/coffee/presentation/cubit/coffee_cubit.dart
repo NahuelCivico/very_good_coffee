@@ -6,7 +6,9 @@ import 'package:very_good_coffee/features/coffee/domain/repositories/abstract_co
 part 'coffee_state.dart';
 
 class CoffeeCubit extends Cubit<CoffeeState> {
-  CoffeeCubit({required this.coffeeRepository}) : super(CoffeeLoading());
+  CoffeeCubit({required this.coffeeRepository}) : super(CoffeeLoading()) {
+    getNextCoffee();
+  }
 
   final AbstractCoffeeRepository coffeeRepository;
 

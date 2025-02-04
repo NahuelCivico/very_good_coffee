@@ -15,7 +15,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    context.read<CoffeeCubit>().getNextCoffee();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
