@@ -12,6 +12,14 @@ Flutter application using Very Good CLI
 
 ## Getting Started 🚀
 
+### 1. Install Dependencies  
+Run the following command to install all required packages:  
+
+```sh
+flutter pub get
+dart run build_runner build
+
+
 This project contains 3 flavors:
 
 - development
