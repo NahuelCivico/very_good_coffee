@@ -6,6 +6,7 @@ import 'package:very_good_coffee/features/coffee/presentation/cubit/coffee_cubit
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_buttons.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_card.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_error.dart';
+import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_like_button.dart';
 import 'package:very_good_coffee/features/coffee/presentation/widgets/very_good_rate.dart';
 import 'package:very_good_coffee/l10n/l10n.dart';
 
@@ -19,13 +20,13 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
-          spacing: 30,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               l10n.veryGoodTitle,
               style: Theme.of(context).primaryTextTheme.labelLarge,
             ),
+            const SizedBox(height: 16),
             BlocBuilder<CoffeeCubit, CoffeeState>(
               builder: (context, state) {
                 return SizedBox(
@@ -47,6 +48,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           VeryGoodCard(imageUrl: state.coffee.imageUrl),
                           VeryGoodRate(rate: state.coffee.rating),
+                          VeryGoodLikeButton(coffee: state.coffee),
                         ],
                       ),
                     CoffeeError() => const VeryGoodError(),
@@ -54,17 +56,8 @@ class HomePage extends StatelessWidget {
                 );
               },
             ),
-            BlocBuilder<CoffeeCubit, CoffeeState>(
-              builder: (context, state) {
-                return switch (state) {
-                  CoffeeLoading() => const CircularProgressIndicator(
-                      color: VeryGoodColors.blue,
-                    ),
-                  CoffeeLoaded() => VeryGoodButtons(coffee: state.coffee),
-                  _ => const SizedBox(),
-                };
-              },
-            ),
+            const SizedBox(height: 16),
+            const VeryGoodButtons(),
           ],
         ),
       ),
